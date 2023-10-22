@@ -1,11 +1,8 @@
-# Python-Selenium-Action
+# Auto Fill Google Form
 
 
 
 <div align="center">
-  <img height="400" src="https://i.imgur.com/s0CDqF5.png" />
-
-   <br>
   <small> <b><i>Show your support!</i> </b></small>
   <br>
    <a href="https://github.com/MarketingPipeline/Python-Selenium-Action">
