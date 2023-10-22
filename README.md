@@ -3,16 +3,7 @@
 
 
 <div align="center">
-  <small> <b><i>Show your support!</i> </b></small>
-  <br>
-   <a href="https://github.com/MarketingPipeline/Python-Selenium-Action">
-    <img title="Star on GitHub" src="https://img.shields.io/github/stars/MarketingPipeline/Python-Selenium-Action.svg?style=social&label=Star">
-  </a>
-  <a href="https://github.com/MarketingPipeline/Python-Selenium-Action/fork">
-    <img title="Fork on GitHub" src="https://img.shields.io/github/forks/MarketingPipeline/Python-Selenium-Action.svg?style=social&label=Fork">
-  </a>
-   </p>  
- 
+
  
 
 
