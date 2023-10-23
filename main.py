@@ -54,7 +54,7 @@ reference_name = "Minh"
 
 def main():
     def fill_form(student_id, reference_name):
-        """Fill out cultivation sheet
+        """Fill out x sheet
 
         Parameters
         ----------
@@ -87,9 +87,9 @@ def main():
         
             
         driver = webdriver.Chrome(options = chrome_options)
-        print(driver)
-        driver.get("https://docs.google.com/forms/d/e/1FAIpQLSf7LSpENMM8nB_YBcDUqgUQFbYNrGwKyIUndz54Fp-U-8ZdwA/viewform?usp=sf_link")
-        # driver.get("https://docs.google.com/forms/d/1sjD-62V_m5B6PAf28PiX7K17U8XNyo8vGAjbtiRZ9oI")
+        
+        driver.get("https://docs.google.com/forms/d/e/1FAIpQLSf7LSpENMM8nB_YBcDUqgUQFbYNrGwKyIUndz54Fp-U-8ZdwA/viewform?usp=sf_link") #clone
+        # driver.get("https://docs.google.com/forms/d/1sjD-62V_m5B6PAf28PiX7K17U8XNyo8vGAjbtiRZ9oI") #real
 
         # wait for one second, until page gets fully loaded
         time.sleep(3)
@@ -99,43 +99,20 @@ def main():
         for box in textbox:
             box.send_keys(student_id)
         
-        # Kind of attendance
-        attendance = driver.find_element(By.XPATH, "(//div[@class='vd3tt']//div)[1]")
-        # attendance = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[1]/label/div/div[1]/div/div[3]/div')
+        # Which attendance: 1-hour group study
+        # attendance = driver.find_element(By.XPATH, "(//div[@role='radio']//div)[3]") #official form
+        attendance = driver.find_element(By.XPATH, "(//div[@class='vd3tt']//div)[1]") #clone form
         attendance.click()
         
-        # Duration of attendance
-        duration = driver.find_element(By.XPATH, "//div[@id='i34']/div[3]/div[1]")
-        # duration = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[1]/label/div/div[1]/div/div[3]/div')
+        # Room of attendance: D430
+        duration = driver.find_element(By.XPATH, "//div[@id='i34']/div[3]/div[1]") #official form
+        # duration = driver.find_element(By.XPATH, "//div[@id='i34']/div[3]/div[1]") #clone form
         duration.click()
         
         # Click on submit button
-        # submit = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[3]/div[1]/div[1]/div/span/span')
-        submit = driver.find_element(By.XPATH, "//span[contains(text(),'Submit')]")
+        # submit = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[3]/div[1]/div[1]/div/span/span') #clone form
+        submit = driver.find_element(By.XPATH, "//span[contains(text(),'Submit')]") #official form
         submit.click()
-        # textbox = driver.find_elements_by_xpath(
-        #     '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input'
-        # )
-        # for box in textbox:
-        #     box.send_keys(student_id)
-
-        # # Kind of attendance
-        # attendance = driver.find_element_by_xpath(
-        #     "/html/body/div/div[3]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[3]/label/div/div[1]/div/div[3]/div"
-        # )
-        # attendance.click()
-
-        # # Duration of attendance
-        # duration = driver.find_element_by_xpath(
-        #     "/html/body/div/div[3]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div[1]/div/span/div/div[2]/label/div/div[1]/div/div[3]/div"
-        # )
-        # duration.click()
-
-        # # click on submit button
-        # submit = driver.find_element_by_xpath(
-        #     "/html/body/div/div[3]/form/div[2]/div/div[3]/div[1]/div[1]/div/span/span"
-        # )
-        # submit.click()
 
         # close the window
         logging.info("Successfully submitted form\n")
