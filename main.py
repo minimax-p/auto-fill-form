@@ -105,7 +105,7 @@ def main():
         attendance.click()
         
         # Duration of attendance
-        duration = driver.find_element(By.XPATH, "//div[@id='i31']/div[3]/div[1]")
+        duration = driver.find_element(By.XPATH, "//div[@id='i34']/div[3]/div[1]")
         # duration = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[1]/label/div/div[1]/div/div[3]/div')
         duration.click()
         
