@@ -100,8 +100,8 @@ def main():
             box.send_keys(student_id)
         
         # Which attendance: 1-hour group study
-        # attendance = driver.find_element(By.XPATH, "(//div[@role='radio']//div)[3]") #official form
-        attendance = driver.find_element(By.XPATH, "(//div[@class='vd3tt']//div)[1]") #clone form
+        attendance = driver.find_element(By.XPATH, "(//div[@role='radio']//div)[3]") #official form
+        # attendance = driver.find_element(By.XPATH, "(//div[@class='vd3tt']//div)[1]") #clone form
         attendance.click()
         
         # Room of attendance: D430
@@ -110,7 +110,6 @@ def main():
         duration.click()
         
         # Click on submit button
-        # submit = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[3]/div[1]/div[1]/div/span/span') #clone form
         submit = driver.find_element(By.XPATH, "//span[contains(text(),'Submit')]") #official form
         submit.click()
 
