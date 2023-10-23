@@ -35,7 +35,8 @@ chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
 logging.info("Running main.py\n")
 
 today_ = dt.now().strftime("%B %d, %H:%M:%S")
-ids = ["210072", "210071", "210029", "210143"]
+# ids = ["210072", "210071", "210029", "210143"]
+ids = ["210232"]
 reference_name = "Minh"
 # persons = {
     # 'chris': {
