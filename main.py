@@ -32,25 +32,11 @@ chrome_options.add_argument("-incognito")
 chrome_options.add_argument("--headless")
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
-logging.info("Running main.py\n")
+print("Running main.py\n")
 
 today_ = dt.now().strftime("%B %d, %H:%M:%S")
-# ids = ["210072", "210071", "210029", "210143"]
 ids = ["210232"]
 reference_name = "Minh"
-# persons = {
-    # 'chris': {
-    #     'number': 9292649156,
-    #     'carrier': 'cricket'
-    # },
-    # "makai": {"number": 5203096035, "carrier": "verizon"},
-    # "rumi": {"number": 5203091772, "carrier": "verizon"},
-# }
-# persons  = {
-    # 'minh': {
-        # 'number': 8458200513, "carrier": "verizon"
-    # }
-# }
 
 def main():
     def fill_form(student_id, reference_name):
@@ -63,7 +49,7 @@ def main():
         reference_name : str
             person for reference
         """
-        logging.info(f"Filling out form for {student_id} with {reference_name} as reference")
+        print(f"Filling out form for {student_id} with {reference_name} as reference")
         # Open URL
         chrome_options = webdriver.ChromeOptions()    
         # Add your options as needed    
@@ -93,7 +79,6 @@ def main():
 
         # wait for one second, until page gets fully loaded
         time.sleep(3)
-
         # Select input box
         textbox = driver.find_elements(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
         for box in textbox:
@@ -123,8 +108,6 @@ def main():
 
     msg_out = f"Successfully Filled Google Form.\n{today_}"
     print(msg_out)
-    # gen_util.send_sms(env.SMS["SENDER"], env.SMS["PASSWORD"], persons, msg=msg_out)
-
 
 if __name__ == "__main__":
     try:
@@ -133,5 +116,3 @@ if __name__ == "__main__":
         msg_out = f"Error occured autofilling Google Form. Check with Minh for details.\n{today_}"
         print(msg_out)
         print(e)
-        # gen_util.send_sms(env.SMS["SENDER"], env.SMS["PASSWORD"], persons, msg=msg_out)
-        # logging.error(f"Error: {e}")
