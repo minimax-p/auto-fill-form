@@ -88,8 +88,8 @@ def main():
             
         driver = webdriver.Chrome(options = chrome_options)
         
-        driver.get("https://docs.google.com/forms/d/e/1FAIpQLSf7LSpENMM8nB_YBcDUqgUQFbYNrGwKyIUndz54Fp-U-8ZdwA/viewform?usp=sf_link") #clone
-        # driver.get("https://docs.google.com/forms/d/1sjD-62V_m5B6PAf28PiX7K17U8XNyo8vGAjbtiRZ9oI") #real
+        # driver.get("https://docs.google.com/forms/d/e/1FAIpQLSf7LSpENMM8nB_YBcDUqgUQFbYNrGwKyIUndz54Fp-U-8ZdwA/viewform?usp=sf_link") #clone
+        driver.get("https://docs.google.com/forms/d/1sjD-62V_m5B6PAf28PiX7K17U8XNyo8vGAjbtiRZ9oI") #real
 
         # wait for one second, until page gets fully loaded
         time.sleep(3)
